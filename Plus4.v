@@ -25,13 +25,16 @@
 //	This module provides the top level framework for FPGATED. It implements a Commodore Plus 4 computer without expansion port.
 // It is written for Papilio FPGATED wing 1.x but can be easily modified for any other platforms.
 //
-// Revision history: 
-// 1.0   16.09.2016			 Commodore Plus 4 shell created, SDRAM based memory (Papilio Pro)
-// 1.1	15.12.2016			 Bootstrap function implemented, loads ROMs to SDRAM
+// Revision history:
+// 0.1   16.09.2016			 Commodore Plus 4 shell created, SDRAM based memory (Papilio Pro)
+// 0.2	15.12.2016			 Bootstrap function implemented, loads ROMs to SDRAM
+// 1.0	27.03.2019			 Released version. Onboard SPI flash access, config kernal, multiple ROM versions  
 //
 //	Comments:                This module is based on c16.v which is part of the original FPGATED design and it makes use of Papilio Pro platform's sdram.
 //									 Using the sdram of Papilio Pro more ROM can be used thus it is possible to implement a Commodore Plus 4.
 //	                         Note however that it is not a complete Plus 4 system; expansion port,user port and ACIA is not yet implemented
+//                          This code is specifically written for Papilio Pro platform with TEDWing extension module. It can be easily modified for other
+//                          platforms. Minimum requirement is however: onboard sdram, SPI flash with space for ROM images, Spartan 3E or Spartan 6 FPGA.
 //
 //////////////////////////////////////////////////////////////////////////////////
 
@@ -507,17 +510,5 @@ assign port_in[6]=IEC_CLKIN;
 assign IEC_ATNOUT=port_out[2];
 //assign ATN=IEC_ATNIN;
 assign IEC_RESET=sreset;
-
-
-chipscope_icon plus4_ICON (
-    .CONTROL0(CONTROL0) // INOUT BUS [35:0]
-);
-chipscope_ila plus4_ILA (
-    .CONTROL(CONTROL0), // INOUT BUS [35:0]
-    .CLK(CLK28), // IN
-//    .TRIG0({trigger,FLASH_CS,flash_clken,FLASH_SI,FLASH_SO,boot_cs0,boot_cs1,boot_rw,boot_addr,boot_addrext,boot_data,phi0,begin_boot}) // IN BUS [39:0]
-	.TRIG0({plus4_addr,plus4_data}), // IN BUS [23:0]
-	.TRIG1({sreset,romconfig,irq_n,phi0,RW,romaddrext,cs0,cs1,mux,aec,rdy}) // IN BUS [15:0]
-);
 
 endmodule
