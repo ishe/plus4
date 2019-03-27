@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/ishe/Documents/Cloud/FPGAdev/Plus4/flashtest_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="flashtest" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="16" />
+   <wvobject fp_name="/flashtest/uut/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/flashtest/uut/active" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">active</obj_property>
+      <obj_property name="ObjectShortName">active</obj_property>
+   </wvobject>
+   <wvobject fp_name="/flashtest/uut/ack" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ack</obj_property>
+      <obj_property name="ObjectShortName">ack</obj_property>
+   </wvobject>
+   <wvobject fp_name="/flashtest/uut/busy" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">busy</obj_property>
+      <obj_property name="ObjectShortName">busy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/flashtest/uut/flash_clken" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">flash_clken</obj_property>
+      <obj_property name="ObjectShortName">flash_clken</obj_property>
+   </wvobject>
+   <wvobject fp_name="/flashtest/uut/flash_cs" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">flash_cs</obj_property>
+      <obj_property name="ObjectShortName">flash_cs</obj_property>
+   </wvobject>
+   <wvobject fp_name="/flashtest/uut/flash_ck" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">flash_ck</obj_property>
+      <obj_property name="ObjectShortName">flash_ck</obj_property>
+   </wvobject>
+   <wvobject fp_name="/flashtest/uut/shiftreg" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">shiftreg[7:0]</obj_property>
+      <obj_property name="ObjectShortName">shiftreg[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/flashtest/uut/flash_si" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">flash_si</obj_property>
+      <obj_property name="ObjectShortName">flash_si</obj_property>
+   </wvobject>
+   <wvobject fp_name="/flashtest/uut/flash_so" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">flash_so</obj_property>
+      <obj_property name="ObjectShortName">flash_so</obj_property>
+   </wvobject>
+   <wvobject fp_name="/flashtest/uut/din" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">din[7:0]</obj_property>
+      <obj_property name="ObjectShortName">din[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/flashtest/uut/dout" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dout[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/flashtest/uut/cmd" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">cmd[7:0]</obj_property>
+      <obj_property name="ObjectShortName">cmd[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/flashtest/uut/flash_state" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">flash_state[6:0]</obj_property>
+      <obj_property name="ObjectShortName">flash_state[6:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/flashtest/uut/shiftcount" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">shiftcount[2:0]</obj_property>
+      <obj_property name="ObjectShortName">shiftcount[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/flashtest/Addr" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">Addr[23:0]</obj_property>
+      <obj_property name="ObjectShortName">Addr[23:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+</wave_config>

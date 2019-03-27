@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/ishe/Documents/Cloud/FPGAdev/Plus4/boottest_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="boottest" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="20" />
+   <wvobject fp_name="/boottest/uut/phi_prev" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">phi_prev</obj_property>
+      <obj_property name="ObjectShortName">phi_prev</obj_property>
+   </wvobject>
+   <wvobject fp_name="/boottest/uut/flash/flash_state" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">flash_state[6:0]</obj_property>
+      <obj_property name="ObjectShortName">flash_state[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/boottest/uut/boot_state" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">boot_state[8:0]</obj_property>
+      <obj_property name="ObjectShortName">boot_state[8:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/boottest/uut/flash_active" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">flash_active</obj_property>
+      <obj_property name="ObjectShortName">flash_active</obj_property>
+   </wvobject>
+   <wvobject fp_name="/boottest/uut/flash_ack" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">flash_ack</obj_property>
+      <obj_property name="ObjectShortName">flash_ack</obj_property>
+   </wvobject>
+   <wvobject fp_name="/boottest/uut/flash_busy" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">flash_busy</obj_property>
+      <obj_property name="ObjectShortName">flash_busy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/boottest/uut/flash_address" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">flash_address[23:0]</obj_property>
+      <obj_property name="ObjectShortName">flash_address[23:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/boottest/uut/flash_address_reg" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">flash_address_reg[23:0]</obj_property>
+      <obj_property name="ObjectShortName">flash_address_reg[23:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/boottest/uut/flash_data" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">flash_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">flash_data[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/boottest/uut/flash_cmd" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">flash_cmd[7:0]</obj_property>
+      <obj_property name="ObjectShortName">flash_cmd[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/boottest/uut/countbytes" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">countbytes[15:0]</obj_property>
+      <obj_property name="ObjectShortName">countbytes[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/boottest/uut/length_h" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">length_h</obj_property>
+      <obj_property name="ObjectShortName">length_h</obj_property>
+   </wvobject>
+   <wvobject fp_name="group97" type="group">
+      <obj_property name="label">FLASH</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/boottest/uut/flash_cs" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">flash_cs</obj_property>
+         <obj_property name="ObjectShortName">flash_cs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/uut/flash_so" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">flash_so</obj_property>
+         <obj_property name="ObjectShortName">flash_so</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/uut/flash_si" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">flash_si</obj_property>
+         <obj_property name="ObjectShortName">flash_si</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/uut/flash_ck" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">flash_ck</obj_property>
+         <obj_property name="ObjectShortName">flash_ck</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/boottest/uut/romtype" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">romtype[6:0]</obj_property>
+      <obj_property name="ObjectShortName">romtype[6:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/boottest/uut/romlength" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">romlength[15:0]</obj_property>
+      <obj_property name="ObjectShortName">romlength[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/boottest/command" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">command</obj_property>
+      <obj_property name="ObjectShortName">command</obj_property>
+   </wvobject>
+   <wvobject fp_name="/boottest/bytecount" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">bytecount[2:0]</obj_property>
+      <obj_property name="ObjectShortName">bytecount[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/boottest/uut/data_reg" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_reg[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_reg[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="group35" type="group">
+      <obj_property name="label">Bootstrap input</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/boottest/uut/reset" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">reset</obj_property>
+         <obj_property name="ObjectShortName">reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/uut/boot_enable" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">boot_enable</obj_property>
+         <obj_property name="ObjectShortName">boot_enable</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/uut/phi" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">phi</obj_property>
+         <obj_property name="ObjectShortName">phi</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="CustomSignalColor">#0000ff</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/uut/clk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/uut/cs" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cs</obj_property>
+         <obj_property name="ObjectShortName">cs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/uut/rw_in" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rw_in</obj_property>
+         <obj_property name="ObjectShortName">rw_in</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/uut/data_in" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">data_in[7:0]</obj_property>
+         <obj_property name="ObjectShortName">data_in[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/uut/addr_in" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">addr_in[2:0]</obj_property>
+         <obj_property name="ObjectShortName">addr_in[2:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group34" type="group">
+      <obj_property name="label">Boostrap outputs</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/boottest/uut/boot_done" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">boot_done</obj_property>
+         <obj_property name="ObjectShortName">boot_done</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/uut/cfg_done" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cfg_done</obj_property>
+         <obj_property name="ObjectShortName">cfg_done</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/uut/addr_out" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">addr_out[15:0]</obj_property>
+         <obj_property name="ObjectShortName">addr_out[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/uut/addr_ext" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">addr_ext[5:0]</obj_property>
+         <obj_property name="ObjectShortName">addr_ext[5:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/uut/cs0" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cs0</obj_property>
+         <obj_property name="ObjectShortName">cs0</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/uut/cs1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cs1</obj_property>
+         <obj_property name="ObjectShortName">cs1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/uut/rw_out" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rw_out</obj_property>
+         <obj_property name="ObjectShortName">rw_out</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/uut/data_out" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">data_out[7:0]</obj_property>
+         <obj_property name="ObjectShortName">data_out[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

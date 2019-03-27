@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/ISHE/Documents/Cloud/FPGAdev/Plus4/boottest_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="boottest" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="15" />
+   <wvobject fp_name="/boottest/flash_cs" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">flash_cs</obj_property>
+      <obj_property name="ObjectShortName">flash_cs</obj_property>
+   </wvobject>
+   <wvobject fp_name="/boottest/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/boottest/flash_ck" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">flash_ck</obj_property>
+      <obj_property name="ObjectShortName">flash_ck</obj_property>
+   </wvobject>
+   <wvobject fp_name="/boottest/flash_so" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">flash_so</obj_property>
+      <obj_property name="ObjectShortName">flash_so</obj_property>
+   </wvobject>
+   <wvobject fp_name="/boottest/flash_si" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">flash_si</obj_property>
+      <obj_property name="ObjectShortName">flash_si</obj_property>
+   </wvobject>
+   <wvobject fp_name="/boottest/cs0" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">cs0</obj_property>
+      <obj_property name="ObjectShortName">cs0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/boottest/cs1" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">cs1</obj_property>
+      <obj_property name="ObjectShortName">cs1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/boottest/rw" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rw</obj_property>
+      <obj_property name="ObjectShortName">rw</obj_property>
+   </wvobject>
+   <wvobject fp_name="/boottest/address_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">address_out[15:0]</obj_property>
+      <obj_property name="ObjectShortName">address_out[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/boottest/address_ext" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">address_ext[5:0]</obj_property>
+      <obj_property name="ObjectShortName">address_ext[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/boottest/dataout" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dataout[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dataout[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/boottest/bootstrap_done" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">bootstrap_done</obj_property>
+      <obj_property name="ObjectShortName">bootstrap_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/boottest/uut/phi" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">phi</obj_property>
+      <obj_property name="ObjectShortName">phi</obj_property>
+   </wvobject>
+   <wvobject fp_name="group77" type="group">
+      <obj_property name="label">boot internal</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/boottest/uut/flash_clken" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">flash_clken</obj_property>
+         <obj_property name="ObjectShortName">flash_clken</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/uut/flash_cs" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">flash_cs</obj_property>
+         <obj_property name="ObjectShortName">flash_cs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/clk" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/uut/flash_ck" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">flash_ck</obj_property>
+         <obj_property name="ObjectShortName">flash_ck</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/uut/shiftreg" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">shiftreg[7:0]</obj_property>
+         <obj_property name="ObjectShortName">shiftreg[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/uut/shiftcount" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">shiftcount[2:0]</obj_property>
+         <obj_property name="ObjectShortName">shiftcount[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/uut/flash_so" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">flash_so</obj_property>
+         <obj_property name="ObjectShortName">flash_so</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/uut/flash_so_reg" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">flash_so_reg</obj_property>
+         <obj_property name="ObjectShortName">flash_so_reg</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/uut/flash_si" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">flash_si</obj_property>
+         <obj_property name="ObjectShortName">flash_si</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/uut/rw" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rw</obj_property>
+         <obj_property name="ObjectShortName">rw</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/uut/flash_state" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">flash_state[7:0]</obj_property>
+         <obj_property name="ObjectShortName">flash_state[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/uut/flash_state_next" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">flash_state_next[7:0]</obj_property>
+         <obj_property name="ObjectShortName">flash_state_next[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/uut/romdata" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">romdata[7:0]</obj_property>
+         <obj_property name="ObjectShortName">romdata[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/uut/start_shift" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">start_shift</obj_property>
+         <obj_property name="ObjectShortName">start_shift</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/boottest/uut/shift" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">shift</obj_property>
+      <obj_property name="ObjectShortName">shift</obj_property>
+   </wvobject>
+</wave_config>

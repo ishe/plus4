@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/ihegedus3/Documents/Cloud/FPGAdev/Plus4/Plus4_testbench_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="Plus4_testbench" />
+            <top_module name="glbl" />
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+            <top_module name="std_logic_arith" />
+            <top_module name="std_logic_unsigned" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="18" />
+   <wvobject fp_name="/Plus4_testbench/CLK28" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">CLK28</obj_property>
+      <obj_property name="ObjectShortName">CLK28</obj_property>
+   </wvobject>
+   <wvobject fp_name="group99" type="group">
+      <obj_property name="label">Plus4</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/Plus4_testbench/romreg_data" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">romreg_data[7:0]</obj_property>
+         <obj_property name="ObjectShortName">romreg_data[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/aec" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">aec</obj_property>
+         <obj_property name="ObjectShortName">aec</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/rdy" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rdy</obj_property>
+         <obj_property name="ObjectShortName">rdy</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/sreset" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sreset</obj_property>
+         <obj_property name="ObjectShortName">sreset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/RAS" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">RAS</obj_property>
+         <obj_property name="ObjectShortName">RAS</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/mux" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">mux</obj_property>
+         <obj_property name="ObjectShortName">mux</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/CAS" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">CAS</obj_property>
+         <obj_property name="ObjectShortName">CAS</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/cs0" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cs0</obj_property>
+         <obj_property name="ObjectShortName">cs0</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/cs1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cs1</obj_property>
+         <obj_property name="ObjectShortName">cs1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/mos8360/rw" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rw</obj_property>
+         <obj_property name="ObjectShortName">rw</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/pla_arm" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">pla_arm</obj_property>
+         <obj_property name="ObjectShortName">pla_arm</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/FD0x" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">FD0x</obj_property>
+         <obj_property name="ObjectShortName">FD0x</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/FD1x" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">FD1x</obj_property>
+         <obj_property name="ObjectShortName">FD1x</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/FD2x" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">FD2x</obj_property>
+         <obj_property name="ObjectShortName">FD2x</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/FD3x" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">FD3x</obj_property>
+         <obj_property name="ObjectShortName">FD3x</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/irq_n" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">irq_n</obj_property>
+         <obj_property name="ObjectShortName">irq_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/csync" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">csync</obj_property>
+         <obj_property name="ObjectShortName">csync</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/cpuenable" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cpuenable</obj_property>
+         <obj_property name="ObjectShortName">cpuenable</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/sound" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sound</obj_property>
+         <obj_property name="ObjectShortName">sound</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/enable" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">enable</obj_property>
+         <obj_property name="ObjectShortName">enable</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/ted_data" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ted_data[7:0]</obj_property>
+         <obj_property name="ObjectShortName">ted_data[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/keyport_data" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">keyport_data[7:0]</obj_property>
+         <obj_property name="ObjectShortName">keyport_data[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/romreg_data" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">romreg_data[7:0]</obj_property>
+         <obj_property name="ObjectShortName">romreg_data[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/rom_data" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">rom_data[7:0]</obj_property>
+         <obj_property name="ObjectShortName">rom_data[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/ram_data" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">ram_data[7:0]</obj_property>
+         <obj_property name="ObjectShortName">ram_data[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/resetcounter" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">resetcounter[12:0]</obj_property>
+         <obj_property name="ObjectShortName">resetcounter[12:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/cpu_data" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">cpu_data[7:0]</obj_property>
+         <obj_property name="ObjectShortName">cpu_data[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="group31" type="group">
+         <obj_property name="label">SDRAM</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/Plus4_testbench/ram_ctrl/cycle" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">cycle[3:0]</obj_property>
+            <obj_property name="ObjectShortName">cycle[3:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/ram_ctrl/initcycle" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">initcycle[7:0]</obj_property>
+            <obj_property name="ObjectShortName">initcycle[7:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/ram_ctrl/initdone" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">initdone</obj_property>
+            <obj_property name="ObjectShortName">initdone</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/CLK28" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">CLK28</obj_property>
+            <obj_property name="ObjectShortName">CLK28</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/ram_ctrl/sdram_cmd" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">sdram_cmd[3:0]</obj_property>
+            <obj_property name="ObjectShortName">sdram_cmd[3:0]</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/ram_ctrl/sdram_addr" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">sdram_addr[11:0]</obj_property>
+            <obj_property name="ObjectShortName">sdram_addr[11:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/ram_ctrl/sdram_data" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">sdram_data[15:0]</obj_property>
+            <obj_property name="ObjectShortName">sdram_data[15:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/ram_ctrl/dataout" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">dataout[7:0]</obj_property>
+            <obj_property name="ObjectShortName">dataout[7:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/ram_ctrl/sdram_cke" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">sdram_cke</obj_property>
+            <obj_property name="ObjectShortName">sdram_cke</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/ram_ctrl/sdram_dqm" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">sdram_dqm[1:0]</obj_property>
+            <obj_property name="ObjectShortName">sdram_dqm[1:0]</obj_property>
+            <obj_property name="Radix">BINARYRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/ram_ctrl/sdram_ba" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">sdram_ba[1:0]</obj_property>
+            <obj_property name="ObjectShortName">sdram_ba[1:0]</obj_property>
+            <obj_property name="Radix">BINARYRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/ram_ctrl/ram_dataout" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">ram_dataout[7:0]</obj_property>
+            <obj_property name="ObjectShortName">ram_dataout[7:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/ram_ctrl/plus4_addr" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">plus4_addr[15:0]</obj_property>
+            <obj_property name="ObjectShortName">plus4_addr[15:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/ram_ctrl/plus4_addrext" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">plus4_addrext[5:0]</obj_property>
+            <obj_property name="ObjectShortName">plus4_addrext[5:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/ram_ctrl/plus4_ras" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">plus4_ras</obj_property>
+            <obj_property name="ObjectShortName">plus4_ras</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/ram_ctrl/plus4_cas" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">plus4_cas</obj_property>
+            <obj_property name="ObjectShortName">plus4_cas</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/ram_ctrl/plus4_rw" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">plus4_rw</obj_property>
+            <obj_property name="ObjectShortName">plus4_rw</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/ram_ctrl/plus4_cs0" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">plus4_cs0</obj_property>
+            <obj_property name="ObjectShortName">plus4_cs0</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/ram_ctrl/plus4_cs1" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">plus4_cs1</obj_property>
+            <obj_property name="ObjectShortName">plus4_cs1</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/mos8360/vcounter" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">vcounter[8:0]</obj_property>
+         <obj_property name="ObjectShortName">vcounter[8:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/mos8360/hcounter" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">hcounter[8:0]</obj_property>
+         <obj_property name="ObjectShortName">hcounter[8:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/phi0" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">phi0</obj_property>
+         <obj_property name="ObjectShortName">phi0</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="CustomSignalColor">#0000ff</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/cpu_addr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">cpu_addr[15:0]</obj_property>
+         <obj_property name="ObjectShortName">cpu_addr[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/plus4_addr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">plus4_addr[15:0]</obj_property>
+         <obj_property name="ObjectShortName">plus4_addr[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/plus4_addrlatch" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">plus4_addrlatch[15:0]</obj_property>
+         <obj_property name="ObjectShortName">plus4_addrlatch[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/plus4_data" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">plus4_data[7:0]</obj_property>
+         <obj_property name="ObjectShortName">plus4_data[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/plus4_datalatch" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">plus4_datalatch[7:0]</obj_property>
+         <obj_property name="ObjectShortName">plus4_datalatch[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/FunctionHver" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">FunctionHver[3:0]</obj_property>
+         <obj_property name="ObjectShortName">FunctionHver[3:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/FunctionLver" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">FunctionLver[3:0]</obj_property>
+         <obj_property name="ObjectShortName">FunctionLver[3:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group100" type="group">
+      <obj_property name="label">Bootstrap</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/Plus4_testbench/plus4_addr" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">plus4_addr[15:0]</obj_property>
+         <obj_property name="ObjectShortName">plus4_addr[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/plus4_data" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">plus4_data[7:0]</obj_property>
+         <obj_property name="ObjectShortName">plus4_data[7:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/sreset" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">sreset</obj_property>
+         <obj_property name="ObjectShortName">sreset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/boot/boot_enable" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">boot_enable</obj_property>
+         <obj_property name="ObjectShortName">boot_enable</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/RW" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">RW</obj_property>
+         <obj_property name="ObjectShortName">RW</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/FD9x" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">FD9x</obj_property>
+         <obj_property name="ObjectShortName">FD9x</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/FD9x_prev" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">FD9x_prev</obj_property>
+         <obj_property name="ObjectShortName">FD9x_prev</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Plus4_testbench/RW" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">RW</obj_property>
+         <obj_property name="ObjectShortName">RW</obj_property>
+      </wvobject>
+      <wvobject fp_name="group91" type="group">
+         <obj_property name="label">Bootstrap input</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/Plus4_testbench/boot/addr_in" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">addr_in[2:0]</obj_property>
+            <obj_property name="ObjectShortName">addr_in[2:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/boot/boot_enable" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">boot_enable</obj_property>
+            <obj_property name="ObjectShortName">boot_enable</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/boot/clk" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">clk</obj_property>
+            <obj_property name="ObjectShortName">clk</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/boot/cs" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">cs</obj_property>
+            <obj_property name="ObjectShortName">cs</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/boot/data_in" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">data_in[7:0]</obj_property>
+            <obj_property name="ObjectShortName">data_in[7:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/boot/flash_so" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">flash_so</obj_property>
+            <obj_property name="ObjectShortName">flash_so</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/boot/phi" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">phi</obj_property>
+            <obj_property name="ObjectShortName">phi</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">#0000ff</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/boot/rw_in" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">rw_in</obj_property>
+            <obj_property name="ObjectShortName">rw_in</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group52" type="group">
+         <obj_property name="label">Bootstrap output</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/Plus4_testbench/FLASH_CK" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">FLASH_CK</obj_property>
+            <obj_property name="ObjectShortName">FLASH_CK</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/FLASH_SI" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">FLASH_SI</obj_property>
+            <obj_property name="ObjectShortName">FLASH_SI</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/FLASH_SO" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">FLASH_SO</obj_property>
+            <obj_property name="ObjectShortName">FLASH_SO</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/FLASH_CS" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">FLASH_CS</obj_property>
+            <obj_property name="ObjectShortName">FLASH_CS</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/boot_addr" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">boot_addr[15:0]</obj_property>
+            <obj_property name="ObjectShortName">boot_addr[15:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/boot_addrext" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">boot_addrext[5:0]</obj_property>
+            <obj_property name="ObjectShortName">boot_addrext[5:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/boot_data" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">boot_data[7:0]</obj_property>
+            <obj_property name="ObjectShortName">boot_data[7:0]</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">#00ffff</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/boot_rw" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">boot_rw</obj_property>
+            <obj_property name="ObjectShortName">boot_rw</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/boot_cs0" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">boot_cs0</obj_property>
+            <obj_property name="ObjectShortName">boot_cs0</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/boot_cs1" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">boot_cs1</obj_property>
+            <obj_property name="ObjectShortName">boot_cs1</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/FD9x" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">FD9x</obj_property>
+            <obj_property name="ObjectShortName">FD9x</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/boot_cs" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">boot_cs</obj_property>
+            <obj_property name="ObjectShortName">boot_cs</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/boot_done" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">boot_done</obj_property>
+            <obj_property name="ObjectShortName">boot_done</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/cfg_done" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">cfg_done</obj_property>
+            <obj_property name="ObjectShortName">cfg_done</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/sdram_addrext" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">sdram_addrext[5:0]</obj_property>
+            <obj_property name="ObjectShortName">sdram_addrext[5:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/sdram_datain" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">sdram_datain[7:0]</obj_property>
+            <obj_property name="ObjectShortName">sdram_datain[7:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/sdram_rw" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">sdram_rw</obj_property>
+            <obj_property name="ObjectShortName">sdram_rw</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/sdram_cs0" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">sdram_cs0</obj_property>
+            <obj_property name="ObjectShortName">sdram_cs0</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/sdram_cs1" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">sdram_cs1</obj_property>
+            <obj_property name="ObjectShortName">sdram_cs1</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group53" type="group">
+         <obj_property name="label">Bootstrap internal</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/Plus4_testbench/boot/cs_prev" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">cs_prev</obj_property>
+            <obj_property name="ObjectShortName">cs_prev</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/boot/boot_state" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">boot_state[8:0]</obj_property>
+            <obj_property name="ObjectShortName">boot_state[8:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/boot/data_reg" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">data_reg[7:0]</obj_property>
+            <obj_property name="ObjectShortName">data_reg[7:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/boot/flash_active" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">flash_active</obj_property>
+            <obj_property name="ObjectShortName">flash_active</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/boot/flash_ack" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">flash_ack</obj_property>
+            <obj_property name="ObjectShortName">flash_ack</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/boot/flash_busy" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">flash_busy</obj_property>
+            <obj_property name="ObjectShortName">flash_busy</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/boot/flash_address_reg" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">flash_address_reg[23:0]</obj_property>
+            <obj_property name="ObjectShortName">flash_address_reg[23:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/boot/flash_cmd_reg" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">flash_cmd_reg[7:0]</obj_property>
+            <obj_property name="ObjectShortName">flash_cmd_reg[7:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/boot/flash_data_reg" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">flash_data_reg[7:0]</obj_property>
+            <obj_property name="ObjectShortName">flash_data_reg[7:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/boot/flash_reg" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">flash_reg[7:0]</obj_property>
+            <obj_property name="ObjectShortName">flash_reg[7:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/boot/rcv_reg" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">rcv_reg[7:0]</obj_property>
+            <obj_property name="ObjectShortName">rcv_reg[7:0]</obj_property>
+            <obj_property name="Radix">HEXRADIX</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/boot/length_h" type="logic" db_ref_id="1">
+            <obj_property name="ElementShortName">length_h</obj_property>
+            <obj_property name="ObjectShortName">length_h</obj_property>
+         </wvobject>
+         <wvobject fp_name="/Plus4_testbench/boot/rxcount" type="array" db_ref_id="1">
+            <obj_property name="ElementShortName">rxcount[1:0]</obj_property>
+            <obj_property name="ObjectShortName">rxcount[1:0]</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/Plus4_testbench/romconfig" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">romconfig</obj_property>
+      <obj_property name="ObjectShortName">romconfig</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Plus4_testbench/romconfreset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">romconfreset</obj_property>
+      <obj_property name="ObjectShortName">romconfreset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Plus4_testbench/sreset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">sreset</obj_property>
+      <obj_property name="ObjectShortName">sreset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Plus4_testbench/cfg_done" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">cfg_done</obj_property>
+      <obj_property name="ObjectShortName">cfg_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Plus4_testbench/boot_done" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">boot_done</obj_property>
+      <obj_property name="ObjectShortName">boot_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Plus4_testbench/key_esc" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">key_esc</obj_property>
+      <obj_property name="ObjectShortName">key_esc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Plus4_testbench/keyreset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">keyreset</obj_property>
+      <obj_property name="ObjectShortName">keyreset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Plus4_testbench/romaddrext" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">romaddrext[5:0]</obj_property>
+      <obj_property name="ObjectShortName">romaddrext[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Plus4_testbench/RW" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">RW</obj_property>
+      <obj_property name="ObjectShortName">RW</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Plus4_testbench/cpu/cpu_core/i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">i</obj_property>
+      <obj_property name="ObjectShortName">i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Plus4_testbench/cpu/cpu_core/irq_n" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">irq_n</obj_property>
+      <obj_property name="ObjectShortName">irq_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Plus4_testbench/cpu/irq_n" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">irq_n</obj_property>
+      <obj_property name="ObjectShortName">irq_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Plus4_testbench/cpu/cpu_core/irqactive" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">irqactive</obj_property>
+      <obj_property name="ObjectShortName">irqactive</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Plus4_testbench/cpu/cpu_core/irqreg" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">irqreg</obj_property>
+      <obj_property name="ObjectShortName">irqreg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Plus4_testbench/cpu/cpu_core/processirq" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">processirq</obj_property>
+      <obj_property name="ObjectShortName">processirq</obj_property>
+   </wvobject>
+</wave_config>

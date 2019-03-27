@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="C:/Users/ISHE/Documents/Cloud/FPGAdev/Plus4/boottest_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="boottest" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="4" />
+   <wvobject fp_name="/boottest/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/boottest/uut/phi" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">phi</obj_property>
+      <obj_property name="ObjectShortName">phi</obj_property>
+   </wvobject>
+   <wvobject fp_name="group101" type="group">
+      <obj_property name="label">Flash Chip Signals</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/boottest/flash_ck" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">flash_ck</obj_property>
+         <obj_property name="ObjectShortName">flash_ck</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/flash_cs" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">flash_cs</obj_property>
+         <obj_property name="ObjectShortName">flash_cs</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/flash_si" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">flash_si</obj_property>
+         <obj_property name="ObjectShortName">flash_si</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/flash_so" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">flash_so</obj_property>
+         <obj_property name="ObjectShortName">flash_so</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group106" type="group">
+      <obj_property name="label">RAM signals</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/boottest/address_ext" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">address_ext[5:0]</obj_property>
+         <obj_property name="ObjectShortName">address_ext[5:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/address_out" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">address_out[15:0]</obj_property>
+         <obj_property name="ObjectShortName">address_out[15:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/rw" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">rw</obj_property>
+         <obj_property name="ObjectShortName">rw</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/cs1" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cs1</obj_property>
+         <obj_property name="ObjectShortName">cs1</obj_property>
+      </wvobject>
+      <wvobject fp_name="/boottest/cs0" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">cs0</obj_property>
+         <obj_property name="ObjectShortName">cs0</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>
