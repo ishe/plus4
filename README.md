@@ -4,10 +4,10 @@ FPGATED based plus4 implementation using Papilio Pro platform
 
  This is FPGAPlus4 based on my FPGATED verilog core.
  
- v1.0	27/03/2019
+ v1.0	released at 27/03/2019
 
  Features:
- - sdram controller syncrhonized to Plus4 phi0 clock
+ - sdram controller synchronized to Plus4 phi0 clock
  - multiple rom images stored in onboard sdram
  - bootstrap code uploads rom images from FPGA SPI config flash
  - ROM images stored in FPGA config flash together with bitstream
