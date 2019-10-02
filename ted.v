@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-//  Copyright 2013-2016 Istvan Hegedus
+//  Copyright 2013-2019 Istvan Hegedus
 //
 //  FPGATED is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -18,6 +18,7 @@
 // Create Date:   12/18/2013 - 31/03/2016
 // Design Name: 	MOS 8360 video chip
 // Module Name:   ted.v 
+// Version:			1.1
 // Project Name:  FPGATED
 // Description: 	Cycle exact MOS 8360 TED display chip
 //
@@ -30,6 +31,8 @@
 // 0.7	 30/03/2016			Audio sound generator and audio D/A implemented
 // 1.0	 14/07/2016			First public release, functionally equivalent to 0.7, code cleaned up, license information added
 // 1.0.1	 08/03/2017			pal register added to module output for FPGA clock switching
+// 1.1	 01/10/2019			DMA position counter fixed (videocounter). MMS FLI demos work now. 
+//
 //////////////////////////////////////////////////////////////////////////////////
 
 module ted(
@@ -108,7 +111,7 @@ reg [15:0] timer3=16'b0;																			// $FF04/05
 reg test=1'b0,ecm=1'b0,bmm=1'b0,den=1'b0,rsel=1'b0;										// $FF06 control1 register bits
 reg [2:0] yscroll=3'b0;																				// $FF06 bits 0-2, vertical scroll register
 reg bmm_reg=1'b0,ecm_reg=1'b0;																	// delayed registered values of BMM and ECM
-reg reverse=1'b0,stop=1'b0,mcm=1'b0,csel=1'b0;									// $FF07 control2 register bits
+reg reverse=1'b0,stop=1'b0,mcm=1'b0,csel=1'b0;												// $FF07 control2 register bits
 reg [2:0] xscroll=3'b0;																				// $FF07 bits 0-2, horizontal scroll regitser
 reg reverse_reg=1'b0,mcm_reg=1'b0;																// delayed registered values of REVERSE and ECM
 reg [7:0] keylatch=8'hff;																			// $FF08 keyboard latch
@@ -130,7 +133,7 @@ reg [9:0] CharPosReload=10'b0;																	// $FF1A/B, Character Position Re
 reg [8:0] vcounter=9'b0;							   											// $FF1C/D, Vertical line counter
 reg [8:0] hcounter=9'b0;							   											// $FF1E, Horizontal dot counter. In real TED it is 11bit. Counts from 0 to 455
 reg [4:0] FlashCount=5'b0;																			// $FF1F bits 3-6, Flash counter's 5th bit is the actual flash state and is not user accessible
-reg [2:0] VertSubCount=3'b0;																		// $FF1f bits 0-2, Vertical Character scan line position
+reg [2:0] VertSubCount=3'b0;																		// $FF1F bits 0-2, Vertical Character scan line position
 
 // TED internal operational registers
 // These are needed for the internal operation 
@@ -257,16 +260,16 @@ initial
 	end
 
 
-//-----------------------------------------------------------------------
+//---------------------------------------------------------------------------
 // Often used combinational signals
-//-----------------------------------------------------------------------
+//---------------------------------------------------------------------------
 
 assign cycle_end=(phicounter==15)?1'b1:1'b0;				// high pulse at the end of each double clock cycle
 assign single_cycle_end=(cycle_end & phi)?1'b1:1'b0;	// high pulse at the end of each single clock cycle
 
-//-----------------------------------------------------------------------
+//---------------------------------------------------------------------------
 // Clock signal driver phi=Single Clock  dphi=Double Clock
-//-----------------------------------------------------------------------
+//---------------------------------------------------------------------------
 
 always @(posedge clk)											// Counting FPGA clock cycles during double clock. phicounter is mod16 counter, 16*clk=half phi
 	begin
@@ -297,9 +300,9 @@ always @(posedge clk)
 		stopreg<=stop;
 	end
 
-//--------------------------------------------------------------------------
+//---------------------------------------------------------------------------
 // Attribute Fetch
-//--------------------------------------------------------------------------
+//---------------------------------------------------------------------------
 
 always @(posedge clk)											// flip flop to signal external fetch single clock window, delayed with 1 single clock cycle
 	begin
@@ -311,9 +314,9 @@ always @(posedge clk)											// flip flop to signal external fetch single clo
 
 assign attr_fetch_line=(videoline>=0 && videoline<203);
 
-//--------------------------------------------------------------------------
+//---------------------------------------------------------------------------
 // DRAM Refresh
-//--------------------------------------------------------------------------	
+//---------------------------------------------------------------------------	
 
 always @(posedge clk)											// refresh single clock control
 	begin
@@ -357,7 +360,7 @@ always @(posedge clk)
 always @*									//horizontal counter next state logic
 	begin
 	hcounter_next=hcounter;
-		if (tedlatch & addr_in_reg[5:0]==HSCANPOS)								// horizontal counter is written by CPU 
+		if (tedlatch & addr_in_reg[5:0]==HSCANPOS)								// $ff1e horizontal counter register write 
 			begin
 				hcounter_next=hcounter+1;
 				hcounter_next[8:3]=~data_in_reg[7:2];		// bit 0-2 are not modified by user write to prevent clock phase change
@@ -721,15 +724,15 @@ always @(posedge clk)
 	end
 
 
-//-------------
+//---------------------------------------------------------------------------
 // Attribute fetch address generation (videocounter is DMA position counter)
-//-------------
+//---------------------------------------------------------------------------
 
-always @(posedge clk)				// videocounter increase window				
+always @(posedge clk)																		// videocounter increase window				
 	begin
 	if(enabledisplay)
 		begin
-		if(hpos_296 | shiftcount==6'd40)
+		if(hpos_296) // | shiftcount==6'd40)
 			inc_videocounter<=0;
 		else if(hpos_432)
 			inc_videocounter<=1;
@@ -738,9 +741,9 @@ always @(posedge clk)				// videocounter increase window
 
 always @(posedge clk)
 	begin
-	if(hpos_392 & videoline==EOS)	// clear videocounter reload register at last line
+	if(hpos_392 & videoline==EOS)															// clear videocounter reload register at last line
 		videocounter_reload<=0;
-	else if(VertSubCount==6 && latch_charposition && VertSubActive)			// Latch videocounter position at 6th line of a character row
+	else if(VertSubCount==6 && latch_charposition && enabledisplay)			// Latch videocounter position at 6th line of a character row
 		videocounter_reload<=videocounter;
 	end	
 	
@@ -755,9 +758,9 @@ always @(posedge clk)						// videocounter used for attribute and character poin
 		end
 	end
 
-//------------------------------------
+//---------------------------------------------------------------------------
 // Internal VideoMatrix (DMA buffers)	
-//------------------------------------
+//---------------------------------------------------------------------------
 
 	
 always @(posedge clk)
@@ -796,7 +799,11 @@ always @(posedge clk)
 		begin
 		if(inc_videocounter)
 			begin
-			if(badline2) begin
+			if(badline) begin										// during badline1 load this buffer together with attribute buffer. Needed for FLI trick
+				char_buf[0]<=data_in;
+				nextchar<=char_buf[39];
+				end
+			else if(badline2) begin
 				char_buf[0]<=data_in;
 				nextchar<=data_in;
 				end
@@ -1221,9 +1228,9 @@ assign blanking=hblank|vblank;
 assign csync=csyncreg;
 assign color=colorreg;
 
-//-----------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------
 // Memory Controller
-//-----------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------
 
 always @(posedge clk)		// Generating RAS, internal CAS and MUX signals based on clk28 cycle numbers. Not 100% precise reproduction of original TED timing but still in dram specifications
 	case (phicounter)			// one clk28 cycle is 35.35ns
@@ -1271,9 +1278,9 @@ assign highrom=(addr_in[15:14]==2'b11)?1'b1:1'b0;								//$c000-$ffff		high rom
 assign io=(addr_in[15:8]==8'hFD || addr_in[15:8]==8'hFE)?1'b1:1'b0;		//$fd00-$feff		IO space
 assign tedreg=(addr_in[15:6]==10'b1111111100 && (addr_in[5]==0 || addr_in[5:1]==7'b11111))?1'b1:1'b0;						//$ff00-$ff1f  & $ff3e-$ff3f		TED registers
 
-//-----------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------
 // Generating TED address out
-//-----------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------
 
 assign addr_out=(~aec)?addr_out_reg:16'hffff;
 
@@ -1322,9 +1329,9 @@ always @*
 			end
 	end
 
-//-----------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------
 // TED registers write
-//-----------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------
 
 assign tedwrite=tedreg&~rw&cycle_end;		// It signals TED register write which happens always when rw is low and end of double clock cycle
 assign tedlatch=tedwrite_delay & (phicounter==3);		// trying to simulate when exactly the hcounter is written by TED
@@ -1593,9 +1600,9 @@ always @(posedge clk)
 
 assign data_out=(datahold)?dataout_reg:8'hff;
 
-//--------------------------------------------------------------------------------
+//---------------------------------------------------------------------------
 // TED audio generator
-//--------------------------------------------------------------------------------
+//---------------------------------------------------------------------------
 
 assign snd=(ch1audio&ch1pwm)|(ch2audio&ch2pwm);		// mixing audio channel signals
 

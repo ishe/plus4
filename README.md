@@ -1,10 +1,11 @@
 # plus4
-FPGATED based plus4 implementation using Papilio Pro platform
+FPGATED based Plus4 implementation using Papilio Pro platform
 
 
  This is FPGAPlus4 based on my FPGATED verilog core.
  
- v1.0	released at 27/03/2019
+ v1.0	27/03/2019	release
+ v1.1rc	02/03/2019	Using TED core v1.1 which fixes FLI problems. DMA counter (videocounter) latch conditions are fixed. Now FLI compatible.
 
  Features:
  - sdram controller synchronized to Plus4 phi0 clock
