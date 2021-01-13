@@ -7,7 +7,8 @@ FPGATED based Plus4 implementation using Papilio Pro platform
  v1.0	27/03/2019	release
  
  v1.1rc	02/03/2019	Using TED core v1.1 which fixes FLI problems. DMA counter (videocounter) latch conditions are fixed. Now FLI compatible.
-
+ v1.2   13/01/2021 New TED core v1.3 which fixes DMA delay issues. Alpharay, Pets Rescue games work fine now.
+ 
  Features:
  - sdram controller synchronized to Plus4 phi0 clock
  - multiple rom images stored in onboard sdram
