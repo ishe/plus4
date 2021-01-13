@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-//  Copyright 2013-2019 Istvan Hegedus
+//  Copyright 2013-2020 Istvan Hegedus
 //
 //  FPGATED is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -15,48 +15,55 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>. 
 //
-// Create Date:   12/18/2013 - 31/03/2016
-// Design Name: 	MOS 8360 video chip
+// Create Date:   18/12/2013 - 31/03/2016
+// Design Name:   MOS 8360 video chip
 // Module Name:   ted.v 
-// Version:			1.1
+// Version:       1.3
 // Project Name:  FPGATED
-// Description: 	Cycle exact MOS 8360 TED display chip
+// Description:   Cycle exact MOS 8360 TED display chip
 //
 // Revision history:  
-//	0.2	 12/11/2015			diag 264 runs, all screenmodes implemented, external dram works, scroll bug in diag264
-// 0.3	 22/01/2016			DRAM refresh horizontal events improved (increment start/stop, counter reset),vertical scroll bug in Invincible, FF1E write bug in New FLI, FLI incorrect 	 				
-// 0.4	 03/02/2016			VertSub counter fixed for Invincible start screen
-// 0.5	 22/02/2016			Raster interrupt fixed, Invincible does not freeze now
-// 0.6	 03/03/2016			Multicolor Character mode bug fixed in pixelgenerator. Majesty Of Sprites looks good now
-// 0.7	 30/03/2016			Audio sound generator and audio D/A implemented
-// 1.0	 14/07/2016			First public release, functionally equivalent to 0.7, code cleaned up, license information added
-// 1.0.1	 08/03/2017			pal register added to module output for FPGA clock switching
-// 1.1	 01/10/2019			DMA position counter fixed (videocounter). MMS FLI demos work now. 
+// 0.2    12/11/2015       Diag 264 runs, all screenmodes implemented, external dram works, scroll bug in diag264
+// 0.3    22/01/2016       DRAM refresh horizontal events improved (increment start/stop, counter reset),vertical scroll bug in Invincible, FF1E write bug in New FLI, FLI incorrect 	 				
+// 0.4    03/02/2016       VertSub counter fixed for Invincible start screen
+// 0.5    22/02/2016       Raster interrupt fixed, Invincible does not freeze now
+// 0.6    03/03/2016       Multicolor Character mode bug fixed in pixelgenerator. Majesty Of Sprites looks good now
+// 0.7    30/03/2016       Audio sound generator and audio D/A implemented
+// 1.0    14/07/2016       First public release, functionally equivalent to 0.7, code cleaned up, license information added
+// 1.0.1   8/03/2017       Pal register added to module output for FPGA clock switching
+// 1.1     1/10/2019       DMA position counter fixed (videocounter). MMS FLI demos work now. 
+// 1.2    23/05/2020       Burst enable signal added, databus OE signal added
+// 1.3     7/01/2021       DMA delay fix to improve compatibility with Alpharay (thanks to gyurco).
 //
 //////////////////////////////////////////////////////////////////////////////////
 
 module ted(
-    input wire clk,								// clk must be 4*dot clk so 28.375152MHz for PAL (1.6*PAL system's clock) and 28.63636 for NTSC (2*NTSC system's clock) 
-	 input wire [15:0] addr_in,
-	 output wire [15:0] addr_out,
-	 input wire [7:0] data_in,
-	 output wire [7:0] data_out,
-	 input wire rw,
-	 output wire cpuclk,							// this is a CPU clock for external real CPU
-	 output wire [6:0] color,					// 7 bits color code
-	 output wire csync,
-	 output wire irq,
-	 output wire ba,
-	 output reg mux,
-	 output reg ras,
-	 output reg cas,
-	 output reg cs0,
-	 output reg cs1,
-	 output reg aec,
-	 output wire snd,
-	 input wire [7:0] k,
-	 output wire cpuenable,						// this TED signals is needed only for FPGA bustiming and FPGA internal cpu. If external CPU is used, it is not needed.
-	 output reg pal 
+    input wire clk,                       // clk must be 4*dot clk so 28.375152MHz for PAL (1.6*PAL system's clock) and 28.63636 for NTSC (2*NTSC system's clock) 
+    input wire [15:0] addr_in,
+    output wire [15:0] addr_out,
+    input wire [7:0] data_in,
+    output wire [7:0] data_out,
+    input wire rw,
+    output wire cpuclk,                   // this is a CPU clock for external real CPU
+    output wire [6:0] color,              // 7 bits color code 
+    output wire csync,
+    output wire irq,
+    output wire ba,
+    output reg mux,
+    output reg ras,
+    output reg cas,
+    output reg cs0,
+    output reg cs1,
+    output reg aec,
+    output wire snd,
+    input wire [7:0] k,
+    output wire cpuenable,                // this TED signals is needed only for FPGA bustiming and FPGA internal cpu. If external CPU is used, it is not needed.
+    output reg pal,                       // pal/ntsc flag (PAL=0 NTSC=1)
+    output wire hsync,                    // horizontal sync for composite video generator or scandoubler
+    output wire vsync,                    // vertical sync for composite video generator or scandoubler
+    output wire burst,                    //	burst enabler signal for composite video generator
+    output wire even,                     // signals even scanlines for PAL encoder
+    output wire data_oe                   // used for databus OE signal when TED places data on bus (active high)
     );
 
 
@@ -169,7 +176,7 @@ reg inc_vertline_window=1'b0;							// active for one single clock cycle, signal
 // horizontal event positions used for the horizontal event decoder. They don't necessarily reflect the values seen in documentation 
 reg hpos_0,hpos_8,hpos_154,hpos_172,hpos_288,hpos_295,hpos_296,hpos_303,hpos_304;
 reg hpos_312,hpos_320,hpos_336,hpos_343,hpos_348,hpos_353,hpos_359,hpos_380,hpos_382;
-reg hpos_384,hpos_391,hpos_392,hpos_400,hpos_407,hpos_423,hpos_431,hpos_432,hpos_440;
+reg hpos_384,hpos_391,hpos_392,hpos_394,hpos_400,hpos_407,hpos_418,hpos_423,hpos_431,hpos_432,hpos_440;
 
 reg inc_charpos=1'b0;									// signals internal character position register (not user accessible) increment range inside scanline (not same as $FF1A/$FF1B) 
 reg [15:0] addr_out_reg;								// TED's address out register
@@ -178,7 +185,8 @@ reg datahold=1'b0;										// signals whether TED should hold its data on the d
 reg VertSubActive=1'b0;									// signals the scanline ranges when Vertsub counter is active
 reg tedwrite_delay=1'b0;								// this signal was needed to emulate a one dot clock delay when TED writes data to its internal registers. Although most probably this delay exist at
 																// all TED register writes, in FPGATED we use it only for hcounter/vcounter and color register writes. This emulates white pixel bug too.
-reg csyncreg=1'b0,vsync=1'b0,equalization=1'b0,eq1=1'b1,eq2=1'b1,hsync=1'b1;		// PAL/NTSC video screen signals
+reg csyncreg=1'b0,vsyncreg=1'b0,equalization=1'b0,eq1=1'b1,eq2=1'b1,hsyncreg=1'b1;		// PAL/NTSC video screen signals
+reg burstreg=1'b0;
 reg [9:0] videocounter=10'b0;							// videocounter is the actual DMA counter.
 reg inc_videocounter=1'b0;								// signals videocounter increment window
 reg [9:0] videocounter_reload=10'b0;				// videocounter is reloaded with this value at the beginning of each displayed line
@@ -636,7 +644,7 @@ always @(posedge clk)					// DMA and Charpos latch delay trick
 
 always @(posedge clk)
 	begin
-	if(latch_charposition)
+	if(hpos_392)
 		begin
 		if(VertSubCount==6)
 			CharPosLatch<=1;				// CharPosLatch signal activates in line 6 and signals that videocounter (DMA counter) has been latched. It is used in line 7 for character position latch.
@@ -653,7 +661,7 @@ always @(posedge clk)					// Character Position Reload register $FF1A/$FF1B
 			CharPosReload[7:0]<=data_in;
 	else if(hpos_392 & videoline==EOS)		// clear character position reload at last line
 			CharPosReload<=0;
-	else if(CharPosLatch & latch_charposition & VertSubActive)				// latch character position at 7th line of a character row if videocunter was latched in previous 6th row
+	else if(CharPosLatch & latch_charposition & VertSubActive)				// latch character position at 7th line of a character row if videocounter was latched in previous 6th row
 			CharPosReload<=CharPosition;
 	end
 
@@ -743,6 +751,8 @@ always @(posedge clk)
 	begin
 	if(hpos_392 & videoline==EOS)															// clear videocounter reload register at last line
 		videocounter_reload<=0;
+	else if(inc_videocounter && hcounter_next == 9'd432 && tick8) // if the videocounter running when it's reloaded, that affects the reload value (HSP in Alpharay)
+			videocounter_reload<=videocounter+1'd1;
 	else if(VertSubCount==6 && latch_charposition && enabledisplay)			// Latch videocounter position at 6th line of a character row
 		videocounter_reload<=videocounter;
 	end	
@@ -751,6 +761,7 @@ always @(posedge clk)						// videocounter used for attribute and character poin
 	begin
 	if(enabledisplay)
 		begin
+//		videocounter<=((hpos_431 & tick8)?videocounter_reload:videocounter) + ((inc_videocounter & single_cycle_end)?1'b1:1'b0);
 		if(hpos_432)
 			videocounter<=videocounter_reload;
 		else if(inc_videocounter & single_cycle_end)							// increase videocounter at cycle border
@@ -916,8 +927,10 @@ always @(hcounter)
 	hpos_384=0;
 	hpos_391=0;
 	hpos_392=0;
+	hpos_394=0;
 	hpos_400=0;
 	hpos_407=0;
+	hpos_418=0;
 	hpos_423=0;
 	hpos_431=0;
 	hpos_432=0;
@@ -939,14 +952,16 @@ always @(hcounter)
 				343:	hpos_343=1;				// Stop refresh counter increment (344 in real TED)
 				348:	hpos_348=1;				// Flash (blink) counter increment point delayed by 2 cycles (increments at 352)
 				353:	hpos_353=1;				// Horizontal blanking start
-				359:	hpos_359=1;				// Horizontal sync start (358 in real TED however line change takes time thus the delay)				
+				359:	hpos_359=1;				// Horizontal sync start (358 in real TED however line change takes time thus the delay)
 				380:	hpos_380=1;
 				382:	hpos_382=1;				// Equalization pulse 2 start
 				384:	hpos_384=1;				// End Of Screen. Clear vertical line,refresh counters and character reload register, increase vertical line after 1 cycle delay
 				391: 	hpos_391=1;	
 				392:	hpos_392=1;				// VertSub register increment (delayed), Hsync end
+				394:	hpos_394=1;				//	Burst signal start
 				400:  hpos_400=1;				// Start external fetch single clock (delayed), Equalization pulse 2 end
 				407:	hpos_407=1;				// Attribute fetch (DMA) FSM start
+				418:	hpos_418=1;				// Burst signal end
 				423:	hpos_423=1;				// Horizontal blanking stop
 				431:	hpos_431=1;				// Refresh counter reset point
 				432:	hpos_432=1;				// Start videocounter increment
@@ -1169,15 +1184,15 @@ assign VBLANK_STOP = (~pal)?9'd269:9'd244;		// Screen blanking stop// Composite 
 
 always @(posedge clk)								// composite synchron is either hsync or equalization+vsync
 	begin
-	csyncreg<=(equalization)?(eq1&eq2)^vsync:hsync;
+	csyncreg<=(equalization)?(eq1&eq2)^vsyncreg:hsyncreg;
 	end
 
 always @(posedge clk)								// vsync signal inverts equalization signal
 	begin
 	if (videoline==VS_START && hpos_400)
-		vsync<=1;
+		vsyncreg<=1;
 	else if (videoline==VS_STOP && hpos_400)
-		vsync<=0;
+		vsyncreg<=0;
 	end
 
 always @(posedge clk)								// equalization signal active during actual vsync+equalization window
@@ -1203,9 +1218,9 @@ always @(posedge clk)								// Equalization pulses generated by horizontal deco
 always @(posedge clk)								//	Horizontal sync pulse (due to original HMOS technology signal change takes 2 pixels long thus these change positions differ from the specification)
 	begin
 	if(hpos_359)
-		hsync<=0;
+		hsyncreg<=0;
 	else if (hpos_391)
-		hsync<=1;
+		hsyncreg<=1;
 	end
 
 always @(posedge clk)							// horizontal blanking zone
@@ -1224,9 +1239,21 @@ always @(posedge clk)							// vertical blanking zone
 		vblank<=1;
 	end
 
+always @(posedge clk)							// Burst signal generation for composite video signal (signals burst signal area)
+	begin
+	if(hpos_394)
+		burstreg<=1'b1;
+	else if (hpos_418)
+		burstreg<=1'b0;
+	end
+
 assign blanking=hblank|vblank;
 assign csync=csyncreg;
 assign color=colorreg;
+//assign hsync=hsyncreg;
+//assign vsync=vsyncreg;
+assign burst=burstreg&~vblank;				// during vblank period burst signal is supressed
+assign even=videoline[0];						// signals odd/even lines for external PAL video encoder
 
 //---------------------------------------------------------------------------
 // Memory Controller
@@ -1599,6 +1626,7 @@ always @(posedge clk)
 	end
 
 assign data_out=(datahold)?dataout_reg:8'hff;
+assign data_oe=datahold;									// datab buffer OE signal
 
 //---------------------------------------------------------------------------
 // TED audio generator
